@@ -8,7 +8,9 @@ import {Link} from 'react-router-dom';
 const Cart = ({cart,handleUpdateCartQty, handleRemoveFromCart, HandleEmptyCart}) => {
   const classes=useStyles();
   const EmptyCart=()=>(
-    <Typography variant="subtitle1">You Have no items in your shopping cart,  start adding some!</Typography>
+    <Typography variant="subtitle1">You Have no items in your shopping cart,        
+    <Link className={classes.link} to="/">start adding some</Link>!
+    </Typography>
   );
 
   const FilledCart=()=>(
@@ -22,7 +24,7 @@ const Cart = ({cart,handleUpdateCartQty, handleRemoveFromCart, HandleEmptyCart})
     </Grid>
     <div className={classes.cardDetails}>
         <Typography variant="h4"> Subtotal: {cart.subtotal.formatted_with_symbol}</Typography>
-        <div>
+    <div>
             <Button className={classes.emptyButton} size="large" type="button" variant="contained" color="secondary" onClick={HandleEmptyCart}>Empty Cart</Button>
             <Button component={Link} to="/checkout" className={classes.checkoutButton} size="large" type="button" variant="contained" color="primary">Checkout</Button>
         </div>

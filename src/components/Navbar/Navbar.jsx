@@ -1,14 +1,17 @@
 import React from 'react'
 import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography } from '@material-ui/core';
-import { CallMissedSharp, ShoppingCart } from '@material-ui/icons';
-import { mergeClasses } from '@material-ui/styles';
+import { CallMissedSharp, ShoppingCart} from '@material-ui/icons';
+import {Button} from '@material-ui/core';
 import logo from '../../assets/commerce.png'
 import useStyles from './styles';
 import {Link} from 'react-router-dom';
+import { useAuth0 } from "@auth0/auth0-react";
 
 
 const Navbar = ({totalItems}) => {
   const classes=useStyles();
+  const { user , loginWithRedirect ,isAuthenticated} = useAuth0();
+  const { logout } = useAuth0();
   return (
     <>
     <AppBar position="fixed" className={CallMissedSharp.appBar} color="inherit">
@@ -25,6 +28,22 @@ const Navbar = ({totalItems}) => {
             </Badge>
           </IconButton>
         </div>
+        {isAuthenticated && (
+        <div>
+          <Typography varient="h6" className={classes.title}>
+          {user.name}
+          </Typography>
+        </div>)}
+          {
+            isAuthenticated ? (
+              <div>
+              <Button onClick={() => logout({ logoutParams: { returnTo: window.location.origin }})}>Log Out</Button>
+              </div>):(
+              <div className={classes.button}>
+              <Button onClick={() => loginWithRedirect()}>Log In</Button>
+              </div>
+            )
+          }         
       </Toolbar>
     </AppBar>
     </>
