@@ -5,6 +5,7 @@ export default makeStyles((theme) => ({
   media: {
     height: 260,
   },
+
   root:{
     maxHeight: '100%',
     [theme.breakpoints.up('sm')]: {

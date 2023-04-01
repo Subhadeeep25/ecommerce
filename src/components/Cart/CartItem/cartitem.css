@@ -1,0 +1,14 @@
+.root {
+   height: 400px;
+  max-height: 400px;
+  width: 300px;
+  max-width: 300px;
+  padding: 25%;
+  position: relative;
+  justify-content: space-around;
+}
+.h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: medium;
+  width: 100%;
+}

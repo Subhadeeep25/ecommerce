@@ -20,9 +20,15 @@ export default makeStyles((theme) => ({
   link: {
     textDecoration: 'none',
   },
+  loading: {
+    position: 'fixed',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+  },
   cardDetails: {
     display: 'flex',
-    marginTop: '10%',
+    marginTop: '20%',
     width: '100%',
     justifyContent: 'space-between',
   },

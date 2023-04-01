@@ -15,13 +15,13 @@ const Productview = ({onAddToCart}) => {
       setIsLoading(false);
     };
     fetchProduct();
-  }, []);
+  }, [id]);
   return (
     <>
       <div className="app">
         {isLoading ? (
-          <div className="loading">
-            <CircularProgress />
+          <div className="loading" align="center">
+            <CircularProgress/>
           </div>
         ) : (
           <SingleProductView product={product} onAddToCart={onAddToCart}/>

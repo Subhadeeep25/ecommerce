@@ -1,0 +1,35 @@
+.root {
+  height: 400px;
+  max-height: 400px;
+  width: 300px;
+  max-width: 300px;
+  padding: auto;
+  position: relative;
+  margin-left: 2%;
+}
+.h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: small;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+}
+.h5 {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  color: rgba(0, 0, 0, 0.507);
+}
+
+.root:hover {
+  -webkit-box-shadow: 0 1px 15px #3267b6;
+}
+.fixedIconButton {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+.buttons {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}
